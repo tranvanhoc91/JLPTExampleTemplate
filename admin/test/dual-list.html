@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+
+
+
+  <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../dist/css/AdminLTE.min.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="../dist/css/skins/_all-skins.min.css">
+
+<!-- jQuery 2.2.3 -->
+<script src="../plugins/jQuery/jquery-2.2.3.min.js"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="../bootstrap/js/bootstrap.min.js"></script>
+<!-- FastClick -->
+<script src="../plugins/fastclick/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="../dist/js/app.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../dist/js/demo.js"></script>
+
+
+<style type="text/css">
+.v-center {
+  min-height:200px;
+  display: flex;
+  justify-content:center;
+  flex-flow: column wrap;
+}
+</style>
+
+
+</head>
+<body>
+
+
+
+<div class="container">
+  <div class="row">
+        <div class="col-md-12 text-center"><h3>Pick List Example</h3></div>
+  		<div class="col-sm-4 col-sm-offset-1">
+          <div class="list-group" id="list1">
+          <a href="#" class="list-group-item active">List 1 <input title="toggle all" type="checkbox" class="all pull-right"></a>
+          <a href="#" class="list-group-item">Second item <input type="checkbox" class="pull-right"></a>
+          <a href="#" class="list-group-item">Third item <input type="checkbox" class="pull-right"></a>
+          <a href="#" class="list-group-item">More item <input type="checkbox" class="pull-right"></a>
+          <a href="#" class="list-group-item">Another <input type="checkbox" class="pull-right"></a>
+          </div>
+        </div>
+        <div class="col-md-2 v-center">
+     		<button title="Send to list 2" class="btn btn-default center-block add"><i class="glyphicon glyphicon-chevron-right"></i></button>
+            <button title="Send to list 1" class="btn btn-default center-block remove"><i class="glyphicon glyphicon-chevron-left"></i></button>
+        </div>
+        <div class="col-sm-4">
+    	  <div class="list-group" id="list2">
+          <a href="#" class="list-group-item active">List 2 <input title="toggle all" type="checkbox" class="all pull-right"></a>
+          <a href="#" class="list-group-item">Alpha <input type="checkbox" class="pull-right"></a>
+          <a href="#" class="list-group-item">Charlie <input type="checkbox" class="pull-right"></a>
+          <a href="#" class="list-group-item">Bravo <input type="checkbox" class="pull-right"></a>
+          </div>
+        </div>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+$('.add').click(function(){
+    $('.all').prop("checked",false);
+    var items = $("#list1 input:checked:not('.all')");
+    var n = items.length;
+  	if (n > 0) {
+      items.each(function(idx,item){
+        var choice = $(item);
+        choice.prop("checked",false);
+        choice.parent().appendTo("#list2");
+      });
+  	}
+    else {
+  		alert("Choose an item from list 1");
+    }
+});
+
+$('.remove').click(function(){
+    $('.all').prop("checked",false);
+    var items = $("#list2 input:checked:not('.all')");
+	items.each(function(idx,item){
+      var choice = $(item);
+      choice.prop("checked",false);
+      choice.parent().appendTo("#list1");
+    });
+});
+
+/* toggle all checkboxes in group */
+$('.all').click(function(e){
+	e.stopPropagation();
+	var $this = $(this);
+    if($this.is(":checked")) {
+    	$this.parents('.list-group').find("[type=checkbox]").prop("checked",true);
+    }
+    else {
+    	$this.parents('.list-group').find("[type=checkbox]").prop("checked",false);
+        $this.prop("checked",false);
+    }
+});
+
+$('[type=checkbox]').click(function(e){
+  e.stopPropagation();
+});
+
+/* toggle checkbox when list group item is clicked */
+$('.list-group a').click(function(e){
+  
+    e.stopPropagation();
+  
+  	var $this = $(this).find("[type=checkbox]");
+    if($this.is(":checked")) {
+    	$this.prop("checked",false);
+    }
+    else {
+    	$this.prop("checked",true);
+    }
+  
+    if ($this.hasClass("all")) {
+    	$this.trigger('click');
+    }
+});
+
+</script>
+</body>
+</html>

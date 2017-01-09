@@ -25,7 +25,20 @@
   <![endif]-->
 
   
-  
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js" data-semver="3.1.1" data-require="bootstrap"></script>
+    <script src="http://bootboxjs.com/bootbox.js"></script>
+    
+    <script type="text/javascript">
+    
+    $(document).ready(function() {
+
+    	  $('#btnDelete').click(function() {
+    	    bootbox.confirm("Are you sure want to delete?", function(result) {
+    	      alert("Confirm result: " + result);
+    	    });
+    	  });
+    	});
+    </script>
 
 <style>
 
@@ -454,7 +467,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        User Profile
+        User Profile [Admin coi cua collaborator]
       </h1>
       <ol class="breadcrumb">
         <li><a href="../../#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -467,16 +480,26 @@
     <section class="content">
 
       <div class="row">
+        <!-- LEFT CONTENT -->
         <div class="col-md-3">
 
           <!-- Profile Image -->
           <div class="box box-primary">
             <div class="box-body box-profile">
-              <img class="profile-user-img img-responsive img-circle" src="../../dist/img/user4-128x128.jpg" alt="User profile picture">
+<form class="form-horizontal">
+<div class="fileinput fileinput-new" data-provides="fileinput">
+     <img class="profile-user-img img-responsive img-circle" src="../../dist/img/user4-128x128.jpg" alt="User profile picture">
+  <p></p><p></p>
+  <div style="text-align: center;">
+    <span class="btn btn-default btn-file">
+    <span class="fileinput-new fileinput-exists btn-primary">Brown</span>
+    <input type="file" name="..."></span>
+  </div>
+</div>
+                </form>
+              <h3 class="profile-username text-center">Nguyen Van Luong</h3>
 
-              <h3 class="profile-username text-center">Trieu Gia Thang</h3>
-
-              <p class="text-muted text-center">Administrator</p>
+              <p class="text-muted text-center">Collaborator</p>
 
               <ul class="list-group list-group-unbordered">
               	<li class="list-group-item">
@@ -486,13 +509,24 @@
                   <b>Logined</b> <a class="pull-right">2016/2/12 2:15:11</a><br>
                 </li>
               </ul>
-
-              <a href="../../#" class="btn btn-primary btn-block"><b>Edit</b></a><p></p>
-              <a href="../../#" class="btn btn-primary btn-danger"><b>Delete</b></a>
+              <center><a href="../../#" class="btn btn-primary btn-danger"><b>Delete</b></a></center>
+              <button class='btn btn-danger btn-xs' id="btnDelete" type="submit" name="remove_levels" value="delete"><span class="fa fa-times"></span> delete</button>
             </div>
+            
+            <script type="text/javascript">
+            $(document).ready(function() {
+
+            	  $('#btnDelete').click(function() {
+            	    bootbox.confirm("Are you sure want to delete?", function(result) {
+            	      alert("Confirm result: " + result);
+            	    });
+            	  });
+            	});
+            </script>
+            
             <!-- /.box-body -->
           </div>
-          <!-- /.box -->
+          <!-- //Profile Image -->
 
           <!-- About Me Box -->
           <div class="box box-primary">
@@ -501,18 +535,19 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              	<strong><i class="fa fa-map-marker margin-r-5"></i> Address</strong>
-              	<p class="text-muted">Thai binh, Viet Nam</p>
-              	<hr>
+              	<strong><i class="fa fa-map-marker margin-r-5"></i> Email</strong>
+              	<p class="text-muted">trieugiathang@gmail.com</p>
+              	<strong><i class="fa fa-map-marker margin-r-5"></i> Mobile</strong>
+              	<p class="text-muted">070-1465-5690</p>
               	<strong><i class="fa fa-map-marker margin-r-5"></i> Address</strong>
               	<p class="text-muted">Thai binh, Viet Nam</p>
               	<hr>
             </div>
             <!-- /.box-body -->
           </div>
-          <!-- /.box -->
+          <!--// About Me Box -->
         </div>
-        <!-- /.col -->
+        <!-- //LEFT CONTENT -->
         <div class="col-md-9">
           <div class="nav-tabs-custom">
             <ul class="nav nav-tabs">
@@ -532,11 +567,11 @@
                 	     	
                 	     	<div class="row form-inline">
   <div class="col-xs-2">
-  <input type="text" class="form-control" id="inputFirstName" placeholder="æ¢…æœ¨">
+  <input type="text" class="form-control" id="inputFirstName" placeholder="ÃƒÂ¦Ã‚Â¢Ã¢â‚¬Â¦ÃƒÂ¦Ã…â€œÃ‚Â¨">
   </div>
   <label for="inputLastName" class="col-sm-2 control-label">LastName</label>
     <div class="col-xs-2 ">
-                	    	 <input type="text" class="form-control" id="inputLastName" placeholder="å¤ªéƒŽ">
+                	    	 <input type="text" class="form-control" id="inputLastName" placeholder="ÃƒÂ¥Ã‚Â¤Ã‚ÂªÃƒÂ©Ã†â€™Ã…Â½">
   </div>
 					    </div></div>
 					    
@@ -605,7 +640,7 @@
                     <label for="inputEmail" class="col-sm-2 control-label">Address</label>
 
                     <div class="col-sm-10">
-                      <input type="email" class="form-control" id="inputEmail" placeholder="æ¨ªæµœå¸‚æ¸¯åŒ—åŒºæ¨½ç”ºï¼”ï¼�ï¼‘ï¼�ï¼–ãƒ�ãƒ¬ãƒ«ã‚¿ãƒ³ãƒ�ã‚¦ã‚¹IIã€€102">
+                      <input type="email" class="form-control" id="inputEmail" placeholder="ÃƒÂ¦Ã‚Â¨Ã‚ÂªÃƒÂ¦Ã‚ÂµÃ…â€œÃƒÂ¥Ã‚Â¸Ã¢â‚¬Å¡ÃƒÂ¦Ã‚Â¸Ã‚Â¯ÃƒÂ¥Ã…â€™Ã¢â‚¬â€�ÃƒÂ¥Ã…â€™Ã‚ÂºÃƒÂ¦Ã‚Â¨Ã‚Â½ÃƒÂ§Ã¢â‚¬ï¿½Ã‚ÂºÃƒÂ¯Ã‚Â¼Ã¢â‚¬ï¿½ÃƒÂ¯Ã‚Â¼Ã¯Â¿Â½ÃƒÂ¯Ã‚Â¼Ã¢â‚¬ËœÃƒÂ¯Ã‚Â¼Ã¯Â¿Â½ÃƒÂ¯Ã‚Â¼Ã¢â‚¬â€œÃƒÂ£Ã†â€™Ã¯Â¿Â½ÃƒÂ£Ã†â€™Ã‚Â¬ÃƒÂ£Ã†â€™Ã‚Â«ÃƒÂ£Ã¢â‚¬Å¡Ã‚Â¿ÃƒÂ£Ã†â€™Ã‚Â³ÃƒÂ£Ã†â€™Ã¯Â¿Â½ÃƒÂ£Ã¢â‚¬Å¡Ã‚Â¦ÃƒÂ£Ã¢â‚¬Å¡Ã‚Â¹IIÃƒÂ£Ã¢â€šÂ¬Ã¢â€šÂ¬102">
                     </div>
                   </div>
                   
@@ -759,7 +794,7 @@
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.3.7
     </div>
-    <strong>Copyright ï¿½ 2014-2016 <a href="../../http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights
+    <strong>Copyright ÃƒÂ¯Ã‚Â¿Ã‚Â½ 2014-2016 <a href="../../http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights
     reserved.
   </footer>
 

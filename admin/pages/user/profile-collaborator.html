@@ -454,7 +454,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        User Profile
+        User Profile (collaborator profile - cong tac vien dang bai)
       </h1>
       <ol class="breadcrumb">
         <li><a href="../../#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -467,13 +467,23 @@
     <section class="content">
 
       <div class="row">
+      <!-- LEFT CONTENT -->
         <div class="col-md-3">
 
           <!-- Profile Image -->
           <div class="box box-primary">
             <div class="box-body box-profile">
-              <img class="profile-user-img img-responsive img-circle" src="../../dist/img/user4-128x128.jpg" alt="User profile picture">
-
+<form class="form-horizontal">
+<div class="fileinput fileinput-new" data-provides="fileinput">
+     <img class="profile-user-img img-responsive img-circle" src="../../dist/img/user4-128x128.jpg" alt="User profile picture">
+  <p></p><p></p>
+  <div style="text-align: center;">
+    <span class="btn btn-default btn-file">
+    <span class="fileinput-new fileinput-exists btn-primary">Brown</span>
+    <input type="file" name="..."></span>
+  </div>
+</div>
+                </form>
               <h3 class="profile-username text-center">Trieu Gia Thang</h3>
 
               <p class="text-muted text-center">Administrator</p>
@@ -486,13 +496,10 @@
                   <b>Logined</b> <a class="pull-right">2016/2/12 2:15:11</a><br>
                 </li>
               </ul>
-
-              <a href="../../#" class="btn btn-primary btn-block"><b>Edit</b></a><p></p>
-              <a href="../../#" class="btn btn-primary btn-danger"><b>Delete</b></a>
             </div>
             <!-- /.box-body -->
           </div>
-          <!-- /.box -->
+          <!-- //Profile Image -->
 
           <!-- About Me Box -->
           <div class="box box-primary">
@@ -501,24 +508,24 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              	<strong><i class="fa fa-map-marker margin-r-5"></i> Address</strong>
-              	<p class="text-muted">Thai binh, Viet Nam</p>
-              	<hr>
+              	<strong><i class="fa fa-map-marker margin-r-5"></i> Email</strong>
+              	<p class="text-muted">trieugiathang@gmail.com</p>
+              	<strong><i class="fa fa-map-marker margin-r-5"></i> Mobile</strong>
+              	<p class="text-muted">070-1465-5690</p>
               	<strong><i class="fa fa-map-marker margin-r-5"></i> Address</strong>
               	<p class="text-muted">Thai binh, Viet Nam</p>
               	<hr>
             </div>
             <!-- /.box-body -->
           </div>
-          <!-- /.box -->
+          <!--// About Me Box -->
         </div>
-        <!-- /.col -->
+        <!-- //LEFT CONTENT -->
         <div class="col-md-9">
           <div class="nav-tabs-custom">
             <ul class="nav nav-tabs">
               <li class="active"><a href="../../#infomation" data-toggle="tab" aria-expanded="true">Infomation</a></li>
               <li class=""><a href="../../#changepassword" data-toggle="tab" aria-expanded="false">Change password</a></li>
-              <li class=""><a href="../../#setpermission" data-toggle="tab" aria-expanded="false">Set permisstion</a></li>
               <li class=""><a href="../../#changeavatar" data-toggle="tab" aria-expanded="false">Change avatar</a></li>
             </ul>
             <div class="tab-content">
@@ -532,11 +539,11 @@
                 	     	
                 	     	<div class="row form-inline">
   <div class="col-xs-2">
-  <input type="text" class="form-control" id="inputFirstName" placeholder="æ¢…æœ¨">
+  <input type="text" class="form-control" id="inputFirstName" placeholder="Ã¦Â¢â€¦Ã¦Å“Â¨">
   </div>
   <label for="inputLastName" class="col-sm-2 control-label">LastName</label>
     <div class="col-xs-2 ">
-                	    	 <input type="text" class="form-control" id="inputLastName" placeholder="å¤ªéƒŽ">
+                	    	 <input type="text" class="form-control" id="inputLastName" placeholder="Ã¥Â¤ÂªÃ©Æ’Å½">
   </div>
 					    </div></div>
 					    
@@ -605,7 +612,7 @@
                     <label for="inputEmail" class="col-sm-2 control-label">Address</label>
 
                     <div class="col-sm-10">
-                      <input type="email" class="form-control" id="inputEmail" placeholder="æ¨ªæµœå¸‚æ¸¯åŒ—åŒºæ¨½ç”ºï¼”ï¼�ï¼‘ï¼�ï¼–ãƒ�ãƒ¬ãƒ«ã‚¿ãƒ³ãƒ�ã‚¦ã‚¹IIã€€102">
+                      <input type="email" class="form-control" id="inputEmail" placeholder="Ã¦Â¨ÂªÃ¦ÂµÅ“Ã¥Â¸â€šÃ¦Â¸Â¯Ã¥Å’â€”Ã¥Å’ÂºÃ¦Â¨Â½Ã§â€�ÂºÃ¯Â¼â€�Ã¯Â¼ï¿½Ã¯Â¼â€˜Ã¯Â¼ï¿½Ã¯Â¼â€“Ã£Æ’ï¿½Ã£Æ’Â¬Ã£Æ’Â«Ã£â€šÂ¿Ã£Æ’Â³Ã£Æ’ï¿½Ã£â€šÂ¦Ã£â€šÂ¹IIÃ£â‚¬â‚¬102">
                     </div>
                   </div>
                   
@@ -672,57 +679,6 @@
               </div>
               <!--/// Tab change password -->		
               
-               <!-- Tab set permisstion-->		
-                   <div class="tab-pane" id="setpermission">
-                <form class="form-horizontal">
-                
-
-
-  <div class="row">
-        <div class="col-md-12 text-center"><h3>Permission</h3></div>
-  		<div class="col-sm-4 col-sm-offset-1">
-          <div class="list-group" id="list1">
-          <a href="../../#" class="list-group-item active">Function List <input title="toggle all" type="checkbox" class="all pull-right"></a>
-          <a href="../../#" class="list-group-item">Second item <input type="checkbox" class="pull-right"></a>
-          <a href="../../#" class="list-group-item">Third item <input type="checkbox" class="pull-right"></a>
-          <a href="../../#" class="list-group-item">More item <input type="checkbox" class="pull-right"></a>
-          <a href="../../#" class="list-group-item">Another <input type="checkbox" class="pull-right"></a>
-          </div>
-        </div>
-        <div class="col-md-2 v-center">
-     		<button title="Send to list 2" class="btn btn-default center-block add"><i class="glyphicon glyphicon-chevron-right"></i></button>
-            <button title="Send to list 1" class="btn btn-default center-block remove"><i class="glyphicon glyphicon-chevron-left"></i></button>
-        </div>
-        <div class="col-sm-4">
-    	  <div class="list-group" id="list2">
-          <a href="../../#" class="list-group-item active">Permission List <input title="toggle all" type="checkbox" class="all pull-right"></a>
-          <a href="../../#" class="list-group-item">Alpha <input type="checkbox" class="pull-right"></a>
-          <a href="../../#" class="list-group-item">Charlie <input type="checkbox" class="pull-right"></a>
-          <a href="../../#" class="list-group-item">Bravo <input type="checkbox" class="pull-right"></a>
-          </div>
-        </div>
-  </div>
-
-
-
-
-
-
-
-
-                </form>
-              </div>
-              
-              
-              
-
-              
-       
-       
-              
-                   <!-- ///Tab set permisstion-->	
-                   
-                   
                    <!-- Tab set avatar-->		
                    <div class="tab-pane" id="changeavatar">
                  <!-- the avatar markup -->
@@ -759,7 +715,7 @@
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.3.7
     </div>
-    <strong>Copyright ï¿½ 2014-2016 <a href="../../http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights
+    <strong>Copyright Ã¯Â¿Â½ 2014-2016 <a href="../../http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights
     reserved.
   </footer>
 
